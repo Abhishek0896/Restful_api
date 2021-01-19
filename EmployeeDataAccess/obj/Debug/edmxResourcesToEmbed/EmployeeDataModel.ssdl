@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="mydatabaseModelStoreContainer">
+    <EntitySet Name="employee" EntityType="mydatabaseModel.Store.employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="mydatabaseModel.Store.users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="20" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="20" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="salary" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+</Schema>
