@@ -34,3 +34,6 @@ C:\Rests\Testing\Testing\bin\WebApiContrib.Formatting.Jsonp.pdb
 C:\Rests\Testing\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
 C:\Rests\Testing\Testing\obj\Debug\Testing.dll
 C:\Rests\Testing\Testing\obj\Debug\Testing.pdb
+C:\Rests\Testing\Testing\bin\System.Web.Cors.dll
+C:\Rests\Testing\Testing\bin\System.Web.Http.Cors.dll
+C:\Rests\Testing\Testing\bin\System.Web.Http.Cors.xml

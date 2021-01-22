@@ -15,9 +15,10 @@ namespace Testing
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
-            config.Formatters.Insert(0, jsonpFormatter);
+            System.Web.Http.Cors.EnableCorsAttribute cors = new System.Web.Http.Cors.EnableCorsAttribute("*","*","*");
+            config.EnableCors(cors);
+            //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            //config.Formatters.Insert(0, jsonpFormatter);
          }
     }
 }
