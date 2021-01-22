@@ -3,6 +3,5 @@ C:\Rests\Testing\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.dll
 C:\Rests\Testing\EmployeeDataAccess\bin\Debug\EmployeeDataAccess.pdb
 C:\Rests\Testing\EmployeeDataAccess\bin\Debug\EntityFramework.dll
 C:\Rests\Testing\EmployeeDataAccess\bin\Debug\EntityFramework.xml
-C:\Rests\Testing\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.csprojResolveAssemblyReference.cache
 C:\Rests\Testing\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.dll
 C:\Rests\Testing\EmployeeDataAccess\obj\Debug\EmployeeDataAccess.pdb

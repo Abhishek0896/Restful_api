@@ -6,26 +6,50 @@ using System.Net.Http;
 using System.Web.Http;
 using EmployeeDataAccess;
 using System.Web.Http.Cors;
+using System.Threading;
 
 namespace Testing.Controllers
 {
     [EnableCorsAttribute("*","*","*")]
     public class EmployeeController : ApiController
     {
-        public IEnumerable<employee> Get()
+        [BasicAuthentication]
+        public HttpResponseMessage Get(string gender ="All")
         {
+            string username = Thread.CurrentPrincipal.Identity.Name;
             using (mydatabaseEntities entities = new mydatabaseEntities())
             {
-                return entities.employees.ToList();
+                switch(username.ToLower())
+                {
+                    case "male":
+                        return Request.CreateResponse(HttpStatusCode.OK,
+                            entities.employees.Where(e => e.gender.ToLower() == "male").ToList());
+
+                    case "female":
+                        return Request.CreateResponse(HttpStatusCode.OK,
+                            entities.employees.Where(e => e.gender.ToLower() == "female").ToList());
+
+                    default :
+                        return Request.CreateResponse(HttpStatusCode.BadRequest,
+                            "Value for gender must be All, Male or Female."+gender + "is Invalid");
+                }
             }
         }
-        public employee Get(int id)
-        {
-            using (mydatabaseEntities entities = new mydatabaseEntities())
-            {
-                return entities.employees.FirstOrDefault(e => e.id == id);
-            }
-        }
+
+        //public IEnumerable<employee> Get()
+        //{
+        //    using (mydatabaseEntities entities = new mydatabaseEntities())
+        //    {
+        //        return entities.employees.ToList();
+        //    }
+        //}
+        //public employee Get(int id)
+        //{
+        //    using (mydatabaseEntities entities = new mydatabaseEntities())
+        //    {
+        //        return entities.employees.FirstOrDefault(e => e.id == id);
+        //    }
+        //}
 
         //post method with no response
 
