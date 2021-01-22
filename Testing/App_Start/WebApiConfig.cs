@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace Testing
 {
@@ -14,6 +15,9 @@ namespace Testing
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-        }
+
+            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            config.Formatters.Insert(0, jsonpFormatter);
+         }
     }
 }
